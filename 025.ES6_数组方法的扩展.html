@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>测试1</button>
+    <br>
+    <button>测试1</button>
+    <br>
+    <button>测试1</button>
+    <!-- 
+        1. Array.from(v)：将伪数组对象或可遍历对象转换为真数组
+        2. Array.of (v1, v2, v3) :将一系列值转换成数组
+        3. find(function(value, index, arr){return true}) :找出第一个满足条件返回true的元素
+        4. findIndex(function(value, index, arr) {return true}) :找出第一个满足条件返回true 的元素下标
+     -->
+</body>
+<script>
+    let btns = document.getElementsByTagName('button')
+    Array.from(btns).forEach((item, index) => {
+        console.log(item)
+    });
+
+    let arr = Array.of(1, 4, 6, "abc", true)
+    console.log(arr)
+
+    let arr2 = [2, 3, 4, 5, 7, 9, 10]
+    let result = arr2.find(function (item, index) {
+        return item > 4
+    })
+    console.log(result)
+
+    let arr3 = [2, 3, 4, 5, 7, 9, 10]
+    let resu = arr3.findIndex(function (item, index) {
+        return item > 4
+    })
+    console.log(resu)
+
+
+
+</script>
+
+</html>

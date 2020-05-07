@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="con"></div>
+</body>
+<script>
+    // console.log(Object.is("undefined", "undefined")); //true
+
+    // const target = {
+    //     a: {
+    //         b: "3"
+    //     }
+    // };
+
+    // const source1 = {
+    //     b: 2
+    // };
+    // const source2 = {
+    //     c: 3
+    // };
+
+    // var s = Object.assign(target, source1, source2);
+    // target.a.b = "6"
+    // console.log(target, s);
+
+
+
+
+
+    // Object.getOwnPropertyDescriptors()方法，返回指定对象所有自身属性（非继承属性）的描述对象。
+    // var obj = {
+    //     foo: 123,
+    //     get bar() {
+    //         return "abc"
+    //     }
+    // };
+    // var s = Object.getOwnPropertyDescriptors(obj);
+    // console.log(s);
+
+
+
+
+    // var x = {
+    //     "name": "lily",
+    //     "sayname": function() {
+    //         return "13"
+    //     }
+    // };
+    // x.__proto__ = {
+    //     "a": "hello"
+    // };
+    // console.log(x.a);
+    // //hello
+
+
+    // var x = {
+    //     "name": "lily",
+    //     "sayname": function() {
+    //         return "13"
+    //     }
+    // };
+    // //设置一个对象的prototype对象
+    // Object.setPrototypeOf(x, {
+    //     "a": "hello"
+    // });
+    // // console.log(x);
+    // // 用于读取一个对象的原型对象。
+    // console.log(Object.getPrototypeOf(x));
+
+
+    // var x = {
+    //     "name": "lily",
+    //     "sayname": "123"
+    // };
+    // var arr = Object.keys(x);
+    // console.log(arr);
+    // for (var i in arr) {
+    //     console.log(x[arr[i]]);
+    // }
+
+
+    // Object.entries()方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组
+    // var x = {
+    //     "name": "lily",
+    //     "sayname": "123"
+    // };
+    // var arr = Object.values(x);
+    // console.log(arr);
+
+
+
+
+    // var x = {
+    //     "name": "lily",
+    //     "sayname": "123"
+    // };
+    // var arr = Object.keys(x);
+    // for (var i in arr) {
+    //     var list = `<li>${x[arr[i]]}</li>`;
+    //     document.getElementById("con").innerHTML += list;
+    // }
+
+
+
+    // Object.fromEntries()方法是Object.entries()的逆操作，用于将一个键值对数组转为对象。
+    // var arr = [
+    //     ["name", "lily"],
+    //     ["age", "18"]
+    // ]
+    // console.log(Object.fromEntries(arr));
+    //{name: "lily", age: "18"}
+
+
+    // let obj = {
+    //     a: 1,
+    //     b: 2,
+    //     c: 3
+    // };
+    // var s = Object.entries(obj)
+    // console.log(s);
+    // for (let key of s) {
+    //     console.log(key); // 'a', 'b', 'c'
+    // }
+
+
+
+    // let obj = {
+    //     one: 1,
+    //     two: 2
+    // };
+    // console.log(Object.entries(obj))
+    // for (let i of Object.entries(obj)) {
+    //     console.log(i);
+    // }
+
+
+// a的值是原始数据类型，改了值，不会跟着变，b的值是一个对象引用类型，一个改变另一个也会跟着改变
+//     var target = {};
+//     var source = { a: 1 };
+//     Object.assign(target, source);
+//     // console.log(target); 
+//     source.a = 2;
+//     console.log(source); 
+//     console.log(target); 
+
+// </script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 类的继承
+    class main {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        sayName() {
+            alert(this.name);
+        }
+        sayHello() {
+            alert("hello");
+        }
+    }
+    class child extends main {
+        constructor(name, age, num) {
+            super(name, age)
+            this.number = num;
+        }
+        x() {
+            alert(this.number);
+        }
+        cc() {
+            this.sayHello()
+        }
+    }
+
+    var ch = new child("小明", "20", 123);
+    // ch.x();
+    console.log(ch.name);    //小明
+    ch.cc()  //  弹出hello
+</script>
+
+</html>

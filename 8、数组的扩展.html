@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 填充1
+    // var arr = [1, 2, 3];
+    // arr.fill(7);
+    // console.log(arr);
+
+    // 填充2
+    // var arr = new Array(9);
+    // arr.fill(7);
+    // console.log(arr);
+
+
+    // var arr = new Array(1, 2, 3, 4, 5);
+    // arr.fill(7, 1, 3);
+    // console.log(arr);
+
+
+    // var arr = new Array(1, 2, 3, 4, 5);
+    // arr.fill({
+    //     "name": "lily",
+    //     "age": "20"
+    // }, 2, 4);
+    // console.log(arr);
+    // arr[2].name = "xioaming";
+
+
+    var arr = ["a", "b", "c"];
+    var k = arr.entries();
+    // console.log(k);
+    for (let i of k) {
+        console.log(i);
+    }
+    // (2) [0, "a"]
+    // (2) [1, "b"]
+    // (2) [2, "c"]
+
+    // var arr = [1, 2, 3];
+    // var a = arr.includes(2);
+    // console.log(a);
+    //true
+
+
+    // var arr = [
+    //     [1],
+    //     [2],
+    //     [3],
+    //     [4]
+    // ];
+    // var newarr = arr.flatMap(x => x * 2);
+    // console.log(newarr);
+
+
+    // var arr = [2, 3, 4];
+    // var newarr = arr.flatMap(function(x) {
+    //     return [x, this.name]
+    // }, {
+    //     "name": "lily"
+    // });
+    // console.log(newarr);
+
+
+    // var arr = [1, 2, , 3, 4];
+    // var a = arr.map(x => 1);
+    // console.log(a);
+
+
+
+    // 原生js拉平多维数组
+    // 方法一
+    // var arr = ["a", ["b", "c"], "d", [1, [2, 3]]];
+
+    // function flatten(origin) {
+    //     var result = [];
+    //     for (var i = 0; i < origin.length; i++) {
+    //         var item = origin[i];
+    //         if (Array.isArray(item)) {
+    //             result = result.concat(flatten(item));
+    //             console.log(result);
+    //         } else {
+    //             result.push(item);
+    //         }
+    //     }
+    //     return result;
+    // }
+
+    // var newarr = flatten(arr);
+    // console.log(newarr);
+
+    // 方法二
+    // var arr = ["a", ["b", "c"], "d", [1, [2, 3]]];
+    // var result = [];
+
+    // function flatten(origin) {
+    //     for (var i = 0; i < origin.length; i++) {
+    //         var item = origin[i];
+    //         if (Array.isArray(item)) {
+    //             flatten(item);
+    //         } else {
+    //             result.push(item);
+    //         }
+    //     }
+    // }
+    // flatten(arr);
+    // console.log(result);
+
+    // let arr = [1, 2, 3];
+    // console.log(arr.entries())
+        // for (let index of arr.keys()) {
+        //     console.log(index);
+        // }
+</script>
+
+</html>

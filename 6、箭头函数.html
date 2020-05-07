@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 箭头函数
+    // var test = v => v;
+    // 等同于
+    // var test = function(v) {
+    //     return v;
+    // }
+
+    // var x = test("你好");
+    // console.log(x);
+    // // 你好
+
+    // 如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分
+    // var b = () => 5;
+    // // 等同于
+    // var b = function() {
+    //     return 5;
+    // }
+
+    // var sum = (num1, num2) => num1 + num2;
+    // // 等同于
+    // var sum = function(num1, num2) {
+    //     return num1 + num2;
+    // }
+
+
+
+    // 如果箭头函数的代码块部分多余一条语句，就要使用大括号将他们括起来，并使用return语句返回
+    // var jj = (num) => {
+    //     if (num % 2 == 0) {
+    //         return num;
+    //     }
+    // }
+    // var s = jj(10);
+    // console.log(s);
+
+
+
+    // 如果箭头函数不需要返回值，就不需要写return语句
+    // var sum = 0;
+    // let nn = () => {
+    //     for (let i = 0; i <= 10; i++) {
+    //         sum += i;
+    //     }
+    //     alert(sum);
+    // }
+
+    // nn();
+    // //55
+
+
+
+    //箭头函数可以与变量解构结合使用
+    // var full = ({
+    //     first,
+    //     last
+    // }) => first + "" + last;
+    // var s = full({
+    //     first: "abc",
+    //     last: "ddd"
+    // })
+    // console.log(s);
+
+    //等同于
+    // function full(person) {
+    //     return person.first + person.last;
+    // }
+    // var s = full({
+    //     first: "abc",
+    //     last: "ddd"
+    // })
+    // console.log(s);
+
+
+    // 箭头函数用于简化回调函数
+    // var arr = [4, 2, 5, 7, 1];
+    // var result = arr.sort((a, b) => a - b);
+    // console.log(result);
+    // 等同于
+    // var arr = [4, 2, 5, 7, 1];
+    // var result = arr.sort(function(a, b) {
+    //     return a - b;
+    // })
+    // console.log(result);
+</script>
+
+</html>

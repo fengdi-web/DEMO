@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 属性的简洁表示法
+    // var foo = "lily";
+    // var baz = {
+    //     foo,
+    //     sayName() {
+    //         console.log(this.foo);
+    //     }
+    // }
+    // console.log(baz.foo);
+
+
+    // 属性名表达式
+    // var foo = "lily";
+    // var obj = new Object();
+    // obj[foo] = "abc";
+    // console.log(obj.lily);
+
+
+    // var arr = ["a", "b", "c"];
+    // var obj = new Object();
+    // for (var i in arr) {
+    //     obj[arr[i]] = arr[i];
+    // }
+    // console.log(obj);
+
+
+
+    // let obj = [1, 2, 3, 4];
+    // var obj = {
+    //         a: "1",
+    //         b: "2"
+    //     }
+    // console.log(Object.getOwnPropertyNames(obj));
+    // console.log(Object.getOwnPropertySymbols(obj));
+    // console.log(Reflect.ownKeys(obj));
+    // console.log(Object.keys(obj));
+    // for (var i in obj) {
+    //     console.log(i);
+    // }
+
+
+    // console.log(Object.getOwnPropertyDescriptor(Object.prototype, 'toString').enumerable); //false
+    // console.log(Object.getOwnPropertyDescriptor([], 'length').enumerable); //false
+
+
+    // var obj = {
+    //     a: "1",
+    //     b: "2"
+    // }
+    // console.log(Object.getOwnPropertyDescriptor(obj, "a"));
+    // console.log(obj);
+    // console.log(Object.getOwnPropertyDescriptor(obj.__proto__, "hasOwnProperty").enumerable);
+
+
+
+
+    // var arr = [1, 2, 3, 4];
+    // console.log(Object.getOwnPropertyDescriptor(arr, "length"));
+</script>
+
+</html>

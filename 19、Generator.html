@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // function* helloWorldGenerator() {
+    //     yield 'hello';
+    //     yield 'world';
+    //     return 'ending';
+    // }
+
+    // var x = helloWorldGenerator();;
+    // for (var i of x) {
+    //     console.log(i);
+    // }
+
+
+
+    // Axure
+
+
+    // 我们通过 Generator 函数objectEntries为它加上遍历器接口，
+    // 就可以用for...of遍历了。加上遍历器接口的另一种写法是，
+    // 将 Generator 函数加到对象的Symbol.iterator属性上面。
+    function* objectEntries() {
+        let propKeys = Object.keys(this);    //[first,last]
+        console.log(propKeys);
+
+        for (let i of propKeys) {
+            yield [i, this[i]];          //for...of遍历得到的是值，i是first和last
+        }
+    }
+
+    let jane = {
+        first: 'Jane',
+        last: 'Doe'
+    };
+
+    jane[Symbol.iterator] = objectEntries;
+
+    for (let [key, value] of jane) {           
+        console.log(`${key}: ${value}`);        
+    }
+    // first: Jane
+    // last: Doe
+
+
+
+
+</script>
+
+</html>

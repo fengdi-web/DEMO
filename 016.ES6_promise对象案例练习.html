@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 定义 获取 新闻 的功能函数
+    function getNews(url) {
+        let promise = new Promise((resolve, reject) => {
+            // 状态初始化
+            // 执行异步任务
+            // 创建 xmlHttp 实例对象
+            let xmlHttp = new XMLHttpRequest()
+            console.log(xmlHttp.readyState) // 0
+                // 绑定监听  readyState
+            xmlHttp.onreadystatechange = function() {
+                    if (xmlHttp.readyState === 4) {
+                        if (xmlHttp.status == 200) { // 请求成功
+                            // console.log(xmlHttp.responseText)
+                            // 修改状态
+                            resolve(xmlHttp.responseText) // 修改 promise 的状态为成功的状态
+                        } else { // 请求失败
+                            reject('暂时没有新闻内容')
+                        }
+                    }
+                }
+                // open 设置 请求 的 方式 以及 url
+            xmlHttp.open("GET", url) // ajax 同步发送, 需要为 open(method,url,async) 添加第三个参数默认 true
+                // 发送
+            xmlHttp.send()
+        })
+        return promise
+    }
+
+    getNews(' http://www.liulongbin.top:3005/api/getlunbo')
+        .then((data) => {
+            console.log(data)
+                // 发送请求获取评论内容 url
+                // let commentsurl=JSON.parse(data).commentsurl
+            let commentsurl = '/api/getlunbo'
+            let url = 'http://www.liulongbin.top:3005' + commentsurl;
+            // 发送请求
+            return getNews(url)
+        }, (error) => {
+            console.log(error)
+        }).then((data) => {
+            console.log(data)
+        }, () => {
+
+        })
+</script>
+
+</html>

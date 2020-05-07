@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <!-- 
+    async 函数 (源自ES2017)
+    概念：真正意义上去解决异步回调的问题，同步流程表达异步操作
+    本质: Generator 的语法糖
+    语法:
+        async function foo(){
+            await 异步操作
+            await 异步操作
+        }
+    特点：
+       1、不需要像 Generator 去调用 next 方法, 遇到 await 等待, 当前的异步操作完成就往下执行
+       2、返回的总是 Promise 对象，可以用 then 方法进行下一步操作
+       3、async 取代 Generator 函数的星号 *, await 取代 Generator 的 yield
+       4、语意上更为明确，使用简单，经临床验证，暂时没有任何副作用以及不良反应
+ -->
+
+</body>
+<script>
+    // async 基本使用
+
+    // async function ady() {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(function () {
+    //             resolve()
+    //         }, 2000)
+    //     })
+    // }
+    // 下面这个函数等价于上面的函数, 只是简化了写法
+    // 创建一个异步操作
+    // async function ady() {
+    //     return new Promise(resolve => setTimeout(resolve, 2000))
+    // }
+
+    // 使用 async 函数调用上面的异步操作
+    // async function test() {
+    //     console.log("开始执行了", new Date().toTimeString())
+    //     await ady();
+    //     console.log('执行完毕了', new Date().toTimeString())
+    // }
+    // test()
+    // 上面的 结果证明 await 会等待 后面的函数执行完 在继续执行后面的函数
+
+    // Generator 中 yield 的返回值通常为 undefined
+    // 测试: async 里 await 的返回值
+    // 第一种: 普通的函数
+    // function consout() {
+    //     return 'xxx'
+    // }
+
+    // 注意: 经测试证明 对于普通的函数 await 的返回值为 后面调用 函数 执行完的返回值
+    // async function foo() {
+    //     let y = await consout()
+    //     console.log(y) // xxx 
+    // }
+    // foo() 
+
+    // 第二种: promise 对象, 如果是成功状态, await 返回值默认是 undefined
+    // async function foo() {
+    //     let y = await Promise.resolve('成功了') // 如果传入参数, 则会拿到 传入的 参数
+    //     console.log(y) // xxx 
+    //     y = await Promise.reject('失败了') //  如果是失败状态, await 返回值默认是 失败了, 直接报错
+    //     console.log(y) // xxx 
+    // }
+    // foo()
+
+    // 案例练习 
+    // 获取新闻内容
+     function getNews(url) {
+        return new Promise((resolve, reject) => {
+            $.ajax({
+                method: 'GET',
+                url,
+                success: data => resolve(data), // 如果传入参数, 则会拿到 传入的 参数
+                // error: error => reject() // 技巧 如何把报错 展示给 用户
+                error: error => resolve(false)
+            })
+        })
+    }
+
+    async function sendxml() {
+        let result = await getNews('http://www.liulongbin.top:3005/api/getlunbo')// promise 对象, 如果是成功状态, await 返回值默认是 undefined, 
+        console.log(result)
+        if (!result) { alert('暂时没有新闻内容推送.....'); return } // 一旦出错, 进入错误的回调, 调用 resolve(false), 对返回值取反进入判断, 弹出内容, 并用 return 阻止往下执行
+        // let l=result....
+        let l = '/api/getlunbo'
+        result = await getNews('http://www.liulongbin.top:3005' + l) // 拿到结果后再次进入 上面的异步请求
+        console.log(result)
+    }
+    sendxml()
+
+
+</script>
+
+</html>

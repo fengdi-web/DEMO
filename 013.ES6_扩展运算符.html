@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+     * 用途 
+     *  1. rest (可变) 参数
+     *         用来取代 arguments, 但比 arguments 灵活,  使用...运算符在收集 形参的时候, 必须放在 最后一位
+     *         arguments 伪数组, 具有 length 属性, 但不具备 真实数组的一些 方法 
+     *  2. 扩展运算符
+     *         自动遍历当前数组, 并拿到每一个值, 得到的不是一个数组
+     */
+
+    function bar(a, ...value) { // 三个点是他的 特征, value就是一个变量, 用来取代 arguments
+        console.log(arguments)
+            // arguments.callee() 指向 bar 函数本身
+        console.log(value) // 打印出来是一个真的数组
+        value.forEach(function(item, index) {
+            console.log(item, index)
+        });
+    }
+    bar(2, 6, 9)
+
+    let arr1 = [1, 7]
+    let arr2 = [2, 3, 4, 5, 6]
+    let arr = [1, ...arr2, 7]
+    console.log(arr)
+    console.log(...arr)
+</script>
+
+</html>

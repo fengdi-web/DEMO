@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 通过函数的创建形式
+    function product() {
+        var name = 'yuxiaoliang';
+        this.getName = function () {
+            return name;
+        }
+    }
+    var obj = new product();
+    console.log(obj.getName())
+
+    // 通过defineProperty来实现
+    obj = {
+        name: yuxiaoliang,
+        getName: function () {
+            return this.name
+        }
+    }
+    object.defineProperty(obj, "name", {})
+</script>
+
+</html>

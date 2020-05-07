@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</body>
+<script>
+    // function idMaker() {
+    //     var index = 0;
+
+    //     return {
+    //         next: function() {
+    //             return {
+    //                 value: index++,
+    //                 done: false
+    //             };
+    //         }
+    //     };
+    // }
+    // var it = idMaker();
+    // var a = it.next().value;
+    // console.log(a);
+
+
+
+    // let arr = ['a', 'b', 'c'];
+    // let iter = arr[Symbol.iterator]();
+    // var a = iter.next();
+    // console.log(a);
+    // var b = iter.next();
+    // console.log(b);
+    // var c = iter.next();
+    // console.log(c);
+    // var d = iter.next();
+    // console.log(d);
+
+
+
+    // NodeList.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
+    // // 或者
+    // // NodeList.prototype[Symbol.iterator] = [][Symbol.iterator];
+
+    // var a = [...document.querySelectorAll('div')] // 可以执行了
+    // console.log(a);//(5) [div, div, div, div, div]
+
+
+
+    // 一个类似数组的对象调用数组的Symbol.iterator方法的例子。
+    // let iterable = {
+    //     0: 'a',
+    //     1: 'b',
+    //     2: 'c',
+    //     length: 3,
+    //     [Symbol.iterator]: Array.prototype[Symbol.iterator]
+    // };
+    // for (let item of iterable) {
+    //     console.log(item); // 'a', 'b', 'c'
+    // }
+
+
+    // 注意，普通对象部署数组的Symbol.iterator方法，并无效果。
+    // let iterable = {
+    //     a: 'a',
+    //     b: 'b',
+    //     c: 'c',
+    //     length: 3,
+    //     [Symbol.iterator]: Array.prototype[Symbol.iterator]
+    // };
+    // for (let item of iterable) {
+    //     console.log(item); // undefined, undefined, undefined
+    // }
+
+
+
+    // 字符串的 Iterator 接口
+    // var someString = "hi";
+    // var ty = typeof someString[Symbol.iterator]
+    //     // "function"
+
+    // var iterator = someString[Symbol.iterator]();
+
+    // var a = iterator.next()
+    // var b = iterator.next()
+    // var c = iterator.next()
+    // console.log(ty, a, b, c);
+    // function {value: "h", done: false} {value: "i", done: false} {value: undefined, done: true}
+
+
+
+    // var arr = ['a', 'b', 'c', 'd'];
+
+    // for (let a in arr) {
+    //     console.log(a);
+    // }
+
+    // for (let a of arr) {
+    //     console.log(a);
+    // }
+
+    // for (let a of arr.entries()) {
+    //     console.log(a);
+    // }
+
+
+    // Set 和 Map 结构
+    // var engines = new Set(["Gecko", "Trident", "Webkit", "Webkit"]);
+    // for (var e of engines) {
+    //     console.log(e);
+    // }
+    // // Gecko
+    // // Trident
+    // // Webkit
+
+    // var es6 = new Map();
+    // es6.set("edition", 6);
+    // es6.set("committee", "TC39");
+    // es6.set("standard", "ECMA-262");
+    // for (var [name, value] of es6) {
+    //     console.log(name + ": " + value);
+    //     // console.log(es6);
+    // }
+    // // edition: 6
+    // // committee: TC39
+    // // standard: ECMA-262
+
+
+
+    // let map = new Map().set('a', 1).set('b', 2);
+    // console.log(map);
+    // for (let pair of map) {
+    //     console.log(pair);
+    // }
+    // // ['a', 1]
+    // // ['b', 2]
+
+    // for (let [key, value] of map) {
+    //     console.log(key + ' : ' + value);
+    // }
+    // // a : 1
+    // // b : 2
+
+
+    // const map = new Map([
+    //     ['F', 'no'],
+    //     ['T', 'yes'],
+    // ]);
+    // console.log(map);
+    // for (var i of map) {
+    //     console.log(i);
+    // }
+
+
+
+
+    // 对于普通的对象，for...in循环可以遍历键名，for...of循环会报错。一种解决方法是，使用Object.keys方法将对象的键名生成一个数组，然后遍历这个数组。
+    // let es6 = {
+    //     edition: 6,
+    //     committee: "TC39",
+    //     standard: "ECMA-262"
+    // };
+    // var a = Object.keys(es6)
+    // console.log(a);
+
+    // for (var key of Object.keys(es6)) {
+    //     console.log(key + ': ' + es6[key]);
+    // }
+    // // (3) ["edition", "committee", "standard"]
+    // // edition: 6
+    // // committee: TC39
+    // // standard: ECMA - 262
+
+
+    // let arrayLike = {
+    //     length: 2,
+    //     0: 'a',
+    //     1: 'b'
+    // };
+    // var a = Array.from(arrayLike);
+    // console.log(a);
+    // // 正确
+    // // for (let x of Array.from(arrayLike)) {
+    // //     console.log(x);
+    // // }
+
+
+
+    // let arr = [3, 5, 7];
+    // arr.foo = 'hello';
+
+    // for (let i in arr) {
+    //     console.log(i); // "0", "1", "2", "foo"
+    // }
+
+    // for (let i of arr) {
+    //     console.log(i); //  "3", "5", "7"
+    // }
+
+
+
+
+</script>
+
+</html>

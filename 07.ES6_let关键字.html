@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>测试1</button>
+    <br>
+    <button>测试2</button>
+    <br>
+    <button>测试3</button>
+    <br>
+    <!-- 
+       let
+       1. 作用:
+              与 var 类似, 用于声明一个变量
+       2. 特点:
+              在块级作用域内有效
+              不能重复声明
+              不会预处理(预解析), 不存在变量提升
+                  预处理: 在浏览器进行解析的时候, 找两个东西
+                  var 和 funxtion 
+                  找到 var 之后, 将后面的变量 先声明 但 不赋值, 所以在 var 一个变量之前, 进行打印, 不会报错, 拿到的值是 undefined
+                  找到 function 之后, 提前将这个函数体定义好, 我们可以再函数之前 去调用函数, 因为函数体在预解析的 时候已经定义好了, 所以进行调用不会报错
+
+       3. 应用: 
+              循环遍历加监听
+              使用 let 取代 var 是趋势
+     -->
+</body>
+<script>
+    // console.log(bar)
+    let bar = "kaoby"
+    // let bar = "kaoby"
+    console.log(bar)
+
+    // let btns = document.getElementsByTagName('button')
+    // for (var i = 0; i < btns.length; i++) {
+    //     var btn = btns[i];
+    //         (function (i) {
+    //             btn.onclick = function () {
+    //                 alert(i)
+    //             }
+    //         })(i) // 采用闭包的方式, 也是利用函数作用域的特点, 立即执行函数 在每次自动执行的时候都有自己的作用域
+    // }
+
+    let btns = document.getElementsByTagName('button')
+    for (let i = 0; i < btns.length; i++) { // 每遍历一次, 这个 i 是我 每一个板块的
+        var btn = btns[i];
+        btn.onclick = function () {
+            alert(i)
+        }
+    }
+
+    // 在这里点击事件为回调函数, 回调函数会被放到事件队列中, 等我主线程上的代码执行完了, 再像钩子函数一样勾出来执行, 所以打印 3
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
